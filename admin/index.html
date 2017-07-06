@@ -14,12 +14,12 @@
 <script type="text/javascript">
     systemDictionary = {
         "Title": {"de": "LG 2011 SmartTV Adapter Konfiguration", "en": "LG 2011 SmartTV Adapter Configuration", "ru": "LG 2011 SmartTV Adapter Configuration"},
-        "ip":                    {
+        "IP":                    {
             "de": "IP Adresse des LG SmartTV:",
             "en": "IP address of the LG SmartTV:",
             "ru": "IP address of the LG SmartTV:"
         },
-        "port":                    {
+        "Port":                    {
             "de": "Port des LG SmartTV:",
             "en": "Port of the LG SmartTV:",
             "ru": "Port of the LG SmartTV:"
@@ -55,6 +55,8 @@
             "ru": "On saving, adapter restarts with new config immediately."
         }
     };
+	
+	
     function load(settings, onChange) {
         for (var key in settings) {
             if ($('#' + key + '.value').attr('type') == 'checkbox') {
@@ -89,11 +91,10 @@
 		if (!active) {
 			showMessage(_(translateWord('Enable adapter first')), 'Warning', 'info');
 			sendTo('lgtv2011.' + instance, 'discovery', 5000, function (result) {
-			
-			}
-			return;
+			});
 		}
-	}
+	});
+
 	
 </script>
 

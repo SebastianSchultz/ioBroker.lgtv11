@@ -13,8 +13,8 @@ function RequestPairingKey(ip) {
 	lgtvobj.displayPairingKey(function (err) {
 		if (err) 
 			adapter.log.debug('ERROR: ' + err);
-    }
-});
+    })
+}
 
 
 /*
@@ -272,7 +272,6 @@ function onMessage (obj) {
         case 'discovery':
             if (!obj.callback) return false;
 			RequestPairingKey(adapter.config.ip);
-            });
             return true;
         default:
             adapter.log.warn("Unknown command: " + obj.command);
@@ -292,5 +291,5 @@ function main()
 //		pollTimerChannel = setInterval(pollChannel, parseInt(adapter.config.interval, 10));
 //		pollTimerOnlineStatus = setInterval(pollOnlineStatus, parseInt(adapter.config.interval, 10));
 //		pollTimerInput = setInterval(pollInput, parseInt(adapter.config.interval, 10));
-	}
+//	}
 }
