@@ -65,12 +65,9 @@
 		$('#find').button().click(function () 
 		{
 			if (!active) 
-			{
-				showMessage(_(translateWord('Enable adapter first')), 'Warning', 'info');
-				sendTo('lgtv2011.' + instance, 'discovery', 5000, function (result) 
-				{
-				});
-			}
+				showMessage(_(translateWord('Enter IP of the TV and enable adapter first')), 'Warning', 'info');
+			else
+				sendTo('lgtv2011.' + instance, 'RequestPairingKey_Msg', 5000, function (result)	{});
 		});
 
         for (var key in settings) {
