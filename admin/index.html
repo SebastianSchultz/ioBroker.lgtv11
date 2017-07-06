@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 
 <link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
 <script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
@@ -12,6 +12,7 @@
 
 
 <script type="text/javascript">
+	var active = false;
     systemDictionary = {
         "Title": {"de": "LG 2011 SmartTV Adapter Konfiguration", "en": "LG 2011 SmartTV Adapter Configuration", "ru": "LG 2011 SmartTV Adapter Configuration"},
         "IP":                    {
@@ -58,6 +59,20 @@
 	
 	
     function load(settings, onChange) {
+		socket.emit('getState', 'system.adapter.' + adapter + '.' + instance + '.alive', function (err, state) {
+			active = /*common.enabled ||*/ (state && state.val);
+        });
+		$('#find').button().click(function () 
+		{
+			if (!active) 
+			{
+				showMessage(_(translateWord('Enable adapter first')), 'Warning', 'info');
+				sendTo('lgtv2011.' + instance, 'discovery', 5000, function (result) 
+				{
+				});
+			}
+		});
+
         for (var key in settings) {
             if ($('#' + key + '.value').attr('type') == 'checkbox') {
                 $('#' + key + '.value').prop('checked', settings[key]).change(function () {
@@ -73,6 +88,7 @@
         }
         onChange(false);
     }
+	
     function save(callback) {
         var obj = {};
         $('.value').each(function () {
@@ -87,14 +103,6 @@
         callback(obj);
     }
 	
-	$('#find').button().click(function () {
-		if (!active) {
-			showMessage(_(translateWord('Enable adapter first')), 'Warning', 'info');
-			sendTo('lgtv2011.' + instance, 'discovery', 5000, function (result) {
-			});
-		}
-	});
-
 	
 </script>
 
