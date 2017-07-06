@@ -17,6 +17,8 @@
 	    "keywords":                 ["lgtv", "2011", "Smart", "TV", "LG"],
         "readme":                   "https://github.com/SMundt/iobroker.lgtv2011/blob/master/README.md",
 	    "loglevel":                 "info",
+        "messagebox":               true,
+        "subscribe":                "messagebox",		
         "type":                     "media"
     },
     "native": {
