@@ -50,22 +50,23 @@
             "en": "Settings",
 			"ru": "Настройки"
         },
-        "RestartMessage": {
-            "de": "Beim Speichern der Einstellungen wird der Adapter automatisch neu gestartet.",
-			"en": "On saving, adapter restarts with new config immediately.",
-            "ru": "On saving, adapter restarts with new config immediately."
+        "InfoMessage": {
+            "de": "Bitte die IP-Adresse des LG SMart-TVs eingeben, ggf. den Port ändern und auf \"Pairing-Schlüssel anfordern\" klicken.<br/>Den am eingeschalteten TV angezeigten Schlüssel unter \"Pairing-Schlüssel\" eintragen.",
+			"en": "Please enter the IP adress of the LG SMart-TV, change the port if necessary and click \"Request Pairing Key\".<br/>On the powered-on TV you\'ll see the pairing key which should be entered under \"Pairing Key\"",
+            "ru": "Please enter the IP adress of the LG SMart-TV, change the port if necessary and click \"Request Pairing Key\".<br/>On the powered-on TV you\'ll see the pairing key which should be entered under \"Pairing Key\""
         }
     };
 	
 	
     function load(settings, onChange) {
 		socket.emit('getState', 'system.adapter.' + adapter + '.' + instance + '.alive', function (err, state) {
-			active = /*common.enabled ||*/ (state && state.val);
+			active = (state && state.val);
         });
+		
 		$('#find').button().click(function () 
 		{
 			if (!active) 
-				showMessage(_(translateWord('Enter IP of the TV and enable adapter first')), 'Warning', 'info');
+				showMessage(_(translateWord('Please enable the adapter')), 'Warning', 'info');
 			else
 				sendTo('lgtv2011.' + instance, 'RequestPairingKey_Msg', 5000, function (result)	{});
 		});
@@ -139,10 +140,10 @@
     <h1 class="translate">Settings</h1>
 
     <table>
-        <tr><td class="translate">IP</td><td><input class="value" id="ip" type="input" size="15" /></td></tr>
-        <tr><td class="translate">Port</td><td><input class="value" id="port" type="input" size="15" /></td></tr>
+        <tr><td class="translate">IP</td><td><input class="value" id="ip" type="input" size="15" required /></td></tr>
+        <tr><td class="translate">Port</td><td><input class="value" id="port" type="input" size="15" required /></td></tr>
         <tr><td class="translate">PairingKey</td><td><input class="value" id="pairingkey" type="input" size="15" /></td></tr>
-        <tr><td class="translate">Channel poll interval</td><td><input class="value" id="interval" type="input" size="15" /></td></tr>
+        <tr><td class="translate">Channel poll interval</td><td><input class="value" id="interval" type="input" size="15" required /></td></tr>
 		<tr><td><button id="find"><span class="translate">RequestKey</span></button></td><tr>		
     </table>
 
@@ -152,6 +153,6 @@
     <table>
 </div>
     </table>
-        <h3 class="translate">RestartMessage</h3>
+        <h3 class="translate">InfoMessage</h3>
 
 </html>
