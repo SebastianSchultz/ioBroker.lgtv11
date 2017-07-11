@@ -8,7 +8,7 @@ var LGTV            = require(__dirname + '/lib/utils');
 function RequestPairingKey(ip, port) 
 {
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip);
-	var lgtvobj = new api(adapter.config.ip, adapter.config.port);
+	var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port);
 	lgtvobj.displayPairingKey(function (err) 
 	{
 		if (err) adapter.log.error('ERROR: ' + err);
