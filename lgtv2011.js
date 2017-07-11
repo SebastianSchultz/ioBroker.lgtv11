@@ -2,13 +2,13 @@
 var fs 				= require('fs'); // for storing client key
 var utils 			= require(__dirname + '/lib/utils');
 var adapter 		= utils.adapter('lgtv2011');
-var LGTV            = require(__dirname + '/lib/utils/api.js');
+var LGTV            = require(__dirname + '/lib/utils');
 //var LGTV            = require('node-lgtv-api');
 
 function RequestPairingKey(ip, port) 
 {
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip);
-	var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port);
+	var lgtvobj = new api(adapter.config.ip, adapter.config.port);
 	lgtvobj.displayPairingKey(function (err) 
 	{
 		if (err) adapter.log.error('ERROR: ' + err);
