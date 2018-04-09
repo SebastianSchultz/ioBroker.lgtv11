@@ -15,6 +15,11 @@
 	var active = false;
     systemDictionary = {
         "Title": {"de": "LG 2011 SmartTV Adapter Konfiguration", "en": "LG 2011 SmartTV Adapter Configuration", "ru": "LG 2011 SmartTV Adapter Configuration"},
+        "Model":                    {
+            "de": "Modelljahr LG SmartTV:",
+            "en": "Model year of the LG SmartTV:",
+            "ru": "Model year of the LG SmartTV:"
+        },
         "IP":                    {
             "de": "IP Adresse des LG SmartTV:",
             "en": "IP address of the LG SmartTV:",
@@ -84,6 +89,11 @@
                 });
             }
         }
+
+		$('#model').append('<option value="2011">2011</option>');
+        $('#model').append('<option value="2012">2012</option>');
+        $('#model.value').val(settings.model).select();	
+		
         onChange(false);
     }
 	
@@ -140,6 +150,7 @@
     <h1 class="translate">Settings</h1>
 
     <table>
+        <tr><td><label class="translate" for="model">Model</label></td><td class="admin-icon"></td><td><select class="value" id="model"></select></td><td class="admin-tooltip" data-id="model"></td></tr>
         <tr><td class="translate">IP</td><td><input class="value" id="ip" type="input" size="15" required /></td></tr>
         <tr><td class="translate">Port</td><td><input class="value" id="port" type="input" size="15" required /></td></tr>
         <tr><td class="translate">PairingKey</td><td><input class="value" id="pairingkey" type="input" size="15" /></td></tr>
