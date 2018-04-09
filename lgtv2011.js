@@ -2,10 +2,8 @@
 var fs 				= require('fs'); // for storing client key
 var utils 			= require(__dirname + '/lib/utils');
 var adapter 		= utils.adapter('lgtv2011');
-var LGTV            = require(__dirname + '/lib/api.js');
+var LGTV			= require('node-lgtv-api/api.js');
 var pollTimerChannel = null;
-
-
 
 
 /*function pollChannel() {
@@ -51,16 +49,16 @@ adapter.on('stateChange', function (id, state)
 		switch (id)
 		{
 			case 'turnOff':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending turn off message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_POWER, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_POWER, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending turn off message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
@@ -74,16 +72,16 @@ adapter.on('stateChange', function (id, state)
 			break;
 			
 			case 'volumeUp':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending volumeUp message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_VOLUME_UP, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_VOLUME_UP, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending volumeUp message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
@@ -97,16 +95,16 @@ adapter.on('stateChange', function (id, state)
 			break;
 			
 			case 'volumeDown':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending volumeDown message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_VOLUME_DOWN, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_VOLUME_DOWN, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending volumeDown message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
@@ -120,16 +118,16 @@ adapter.on('stateChange', function (id, state)
 			break;
 			
 			case 'mute':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending mute message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_MUTE_TOGGLE, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_MUTE_TOGGLE, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending mute message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
@@ -143,16 +141,16 @@ adapter.on('stateChange', function (id, state)
 			break;
 			
 			case 'channelUp':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending channelUp message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_CHANNEL_UP, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_CHANNEL_UP, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending channelUp message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
@@ -166,16 +164,16 @@ adapter.on('stateChange', function (id, state)
 			break;			
 
 			case 'channelDown':
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				tvApi.authenticate(function (err, sessionKey) {
+				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					else 
 					{
 						adapter.log.debug('Sending channelDown message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-						tvApi.processCommand(tvApi.TV_CMD_CHANNEL_DOWN, [], function (err, data) {
+						lgtvobj.processCommand(lgtvobj.TV_CMD_CHANNEL_DOWN, [], function (err, data) {
 							if (err) 
 								adapter.log.error('ERROR on sending channelDown message "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 							else 
