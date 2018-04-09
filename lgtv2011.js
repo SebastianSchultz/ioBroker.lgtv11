@@ -34,6 +34,7 @@ var pollTimerChannel = null;
 function RequestPairingKey(ip, port) 
 {
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip);
+
 	var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port);
 	lgtvobj.displayPairingKey(function (err) 
 	{
@@ -72,9 +73,9 @@ adapter.on('stateChange', function (id, state)
 			break;
 			
 			case 'volumeUp':
-				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+//				var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				lgtvobj.authenticate(function (err, sessionKey) {
+/*				lgtvobj.authenticate(function (err, sessionKey) {
 					adapter.log.debug('Sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 					if (err) 
 						adapter.log.error('ERROR on sending authentication request with pairing key "' + adapter.config.pairingkey + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
@@ -92,6 +93,32 @@ adapter.on('stateChange', function (id, state)
 						});
 					}
 				});			
+*/
+
+				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				tvApi.authenticate(function (err, sessionKey) 
+				{
+					if (err) 
+					{
+						adapter.log.error(err);
+					} 
+					else 
+					{
+						tvApi.processCommand(tvApi.TV_CMD_VOLUME_UP, [], function (err, data) 
+						{
+							if (err) 
+							{
+								adapter.log.error(err);
+							} 
+							else 
+							{
+								adapter.log.debug(data);
+							}
+						});
+					}
+				});
+
+
 			break;
 			
 			case 'volumeDown':

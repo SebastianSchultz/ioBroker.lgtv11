@@ -19,6 +19,7 @@
         "readme":                   "https://github.com/SMundt/iobroker.lgtv2011/blob/master/README.md",
 	    "loglevel":                 "info",
         "messagebox":               true,
+        "materialize": true,
         "subscribe":                "messagebox",		
         "type":                     "media"
     },
