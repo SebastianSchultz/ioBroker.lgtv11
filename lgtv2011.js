@@ -2,7 +2,7 @@
 var fs 				= require('fs'); // for storing client key
 var utils 			= require(__dirname + '/lib/utils');
 var adapter 		= utils.adapter('lgtv2011');
-var LGTV			= require('node-lgtv-api/api.js');
+var TvApi			= require(__dirname + '/lib/api');
 var pollTimerChannel = null;
 
 
@@ -34,12 +34,8 @@ var pollTimerChannel = null;
 function RequestPairingKey(ip, port) 
 {
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip);
-
-	var lgtvobj = new LGTV(adapter.config.ip, adapter.config.port);
-	lgtvobj.displayPairingKey(function (err) 
-	{
-		if (err) adapter.log.error('ERROR: ' + err);
-    })
+	var tvApi = new TvApi('192.168.178.60', '8080');
+	tvApi.displayPairingKey().then(adapter.log.debug, adapter.log.error);
 }
 
 adapter.on('stateChange', function (id, state)
@@ -95,7 +91,7 @@ adapter.on('stateChange', function (id, state)
 				});			
 */
 
-				var tvApi = new LGTV(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
+				var tvApi = new TvApi(adapter.config.ip, adapter.config.port, adapter.config.pairingkey);
 				tvApi.authenticate(function (err, sessionKey) 
 				{
 					if (err) 
