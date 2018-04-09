@@ -7,10 +7,6 @@ var pollTimerChannel = null;
 var	xml2js         = require('xml2js').parseString,    
 	http           = require('http');
 
-
-	
-var device_is2012 = false;
-	
 function postRequest (ip, path, post_data, callback) {
     var options = {
         host:   ip,
@@ -49,11 +45,19 @@ function postRequest (ip, path, post_data, callback) {
 
 function RequestPairingKey(ip, port) 
 {
+	if (adapter.config.model == '2012')
+		var device_is2012 = true;
+	else
+		var device_is2012 = false;
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip);
 	postRequest(adapter.config.ip, device_is2012 ? "/roap/api/auth" : "/hdcp/api/auth", "<?xml version=\"1.0\" encoding=\"utf-8\"?><auth><type>AuthKeyReq</type></auth>");
 }
 
 function getSessionId (ip, paringKey, callb) {
+	if (adapter.config.model == '2012')
+		var device_is2012 = true;
+	else
+		var device_is2012 = false;
 	postRequest (ip,
         device_is2012 ? "/roap/api/auth" : "/hdcp/api/auth",
 		"<?xml version=\"1.0\" encoding=\"utf-8\"?><auth><type>AuthReq</type><value>"+paringKey+"</value></auth>",
@@ -75,6 +79,10 @@ function getSessionId (ip, paringKey, callb) {
 }
 
 function handleCommand (device, session, cmd, cb) {
+	if (adapter.config.model == '2012')
+		var device_is2012 = true;
+	else
+		var device_is2012 = false;
 	//echo "<?xml version=\"1.0\" encoding=\"utf-8\"?><command><session>".$session."</session><type>HandleKeyInput</type><value>".$cmd."</value></command>";
 	postRequest (device,
         device_is2012 ? "/roap/api/command" : "/hdcp/api/dtv_wifirc",
@@ -330,7 +338,7 @@ adapter.on('ready', main);
 
 function main() 
 {
-	adapter.log.info('Ready. Configured LG TV IP: ' + adapter.config.ip);
+	adapter.log.info('Ready. Configured LG TV IP: ' + adapter.config.ip + ', Port: ' + adapter.config.port + ', Pairing Key: ' + adapter.config.pairingkey + ', Model: ' + adapter.config.model);
     adapter.subscribeStates('*');
 	if (parseInt(adapter.config.interval, 10)) 
 	{
