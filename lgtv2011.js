@@ -104,7 +104,7 @@ adapter.on('stateChange', function (id, state)
 					} 
 					else 
 					{
-						tvApi.processCommand(tvApi.TV_CMD_VOLUME_UP, [], function (err, data) 
+						tvApi.processCommand(tvApi.TV_CMD_NUMBER_1, [], function (err, data) 
 						{
 							if (err) 
 							{
