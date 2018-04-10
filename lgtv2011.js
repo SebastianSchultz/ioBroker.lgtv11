@@ -54,6 +54,65 @@ function RequestPairingKey(ip, port)
 	req.end(message_request);
 }
 
+function RequestPairing(pairingKey) 
+{
+	adapter.log.info('Starting Pairing on TV: ' + adapter.config.ip + ' with pairing key ' + adapter.config.pairingkey);
+	device_is2012 = (adapter.config.model === '2012');
+	device_is2011 = (adapter.config.model === '2011');
+	device_is2010 = (adapter.config.model === '2010');
+	if (device_is2010)
+	{
+		var reqpath  = '/udap/api/pairing';
+		var message_request = '<?xml version="1.0" encoding="utf-8"?><envelope><api type="pairing"><name>hello</name><value>' + 
+			+ pairingKey + '</value><port>' + adapter.config.port + '</port></api></envelope>';
+	}
+	if (device_is2011)
+	{
+		var reqpath  = '/hdcp/api/auth';
+		var message_request = '<?xml version="1.0" encoding="utf-8"?>' +
+			'<auth><type>AuthReq</type><value>' +
+			pairingKey + '</value></auth>';
+	}
+	if (device_is2012)
+	{
+		var reqpath  = '/roap/api/auth';
+		var message_request = '<?xml version="1.0" encoding="utf-8"?>' +
+			'<auth><type>AuthReq</type><value>' +
+			pairingKey + '</value></auth>';
+	}
+
+	var options = {
+		hostname : adapter.config.ip,
+		port : 8080,
+		path : reqpath,
+		method : 'POST'
+	};
+
+	var req = http.request(options, function (res) 
+	{
+		if(res.statusCode == 200) 
+		{
+			adapter.log.debug('SUCCESS: The Pairing request on LG TV has succeeded.')
+			res.on('data', function(data)
+			{
+				adapter.log.debug('HTTP Request Error: ' + data);
+				return true;
+			});
+		}
+		else 
+		{
+			adapter.log.error('Error: on requestPairing ' + res.statusCode + ' (statusCode)');
+		}
+	});
+
+	req.on('error', function (error) {
+		adapter.log.error('Error: on requestPairing ' + error);
+	});
+
+	req.setHeader('Content-Type', 'text/xml; charset=utf-8');
+	req.end(message_request);
+}
+
 adapter.on('stateChange', function (id, state)
 {
     if (id && state && !state.ack)
@@ -62,14 +121,12 @@ adapter.on('stateChange', function (id, state)
 		switch (id)
 		{
 			case 'turnOff':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				getSessionId (adapter.config.ip, adapter.config.pairingkey, function (dev, sessionKey) 
-				{
-					handleCommand (adapter.config.ip, adapter.config.pairingkey, 'power_off', function (dev_, result) 
-					{
-						adapter.log.debug('RESULT: ' + result);
-					});
-				});			
+				adapter.log.debug('TEST TEST TEST');
+				
+				if (RequestPairing(adapter.config.pairingkey))
+					adapter.log.debug('Pairing mit TV ist OK!')
+				else
+					adapter.log.error('Pairing mit TV ist NICHT OK!');
 			break;
 			
 			case 'volumeUp':
