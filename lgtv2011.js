@@ -37,7 +37,7 @@ function RequestPairingKey(ip, port)
 		method : 'POST'
 	};
 
-	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip + ' with HTTP request: ' + message_request);
+	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip + ' with HTTP request: ' + reqpath);
 
 	var req = http.request(options, function (res) 
 	{
