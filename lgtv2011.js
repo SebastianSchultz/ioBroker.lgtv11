@@ -54,9 +54,9 @@ function RequestPairingKey(ip, port)
 	req.end(message_request);
 }
 
-function RequestPairing(pairingKey) 
+function RequestPairing(pairingKey, callback) 
 {
-	adapter.log.info('Starting Pairing on TV: ' + adapter.config.ip + ' with pairing key ' + adapter.config.pairingkey);
+	adapter.log.debug('Starting RequestPairing on TV: ' + adapter.config.ip + ' with pairing key ' + pairingKey);
 	device_is2012 = (adapter.config.model === '2012');
 	device_is2011 = (adapter.config.model === '2011');
 	device_is2010 = (adapter.config.model === '2010');
@@ -95,20 +95,52 @@ function RequestPairing(pairingKey)
 			adapter.log.debug('SUCCESS: The Pairing request on LG TV has succeeded.')
 			res.on('data', function(data)
 			{
-				adapter.log.debug('HTTP Request Error: ' + data);
-				return true;
+				adapter.log.debug('RequestPairing HTTP Response: ' + data);
+				callback(data);
 			});
 		}
 		else 
 		{
-			adapter.log.error('Error: on requestPairing ' + res.statusCode + ' (statusCode)');
+			adapter.log.error('Error on requestPairing ' + res.statusCode + ' (statusCode)');
+			callback(false);
 		}
 	});
 
-	req.on('error', function (error) {
+	req.on('error', function (error) 
+	{
 		adapter.log.error('Error: on requestPairing ' + error);
 	});
 
+	req.setHeader('Content-Type', 'text/xml; charset=utf-8');
+	req.end(message_request);
+}
+
+function requestCommandKey(sessionID, commandKey) 
+{
+	var message_request = '<?xml version="1.0" encoding="utf-8"?><command><session>' +
+		sessionID +
+		"</session><type>HandleKeyInput</type><value>" +
+		commandKey +
+		"</value></command>"
+
+	var options = {
+		hostname : adapter.config.ip,
+		port : 8080,
+		path : '/roap/api/command',
+		method : 'POST'
+	};
+
+	var req = http.request(options, function (res) {
+
+		if(res.statusCode != 200) 
+		{
+			adapter.log.error('Error HTTP Request requestCommandKey "' + commandKey + '": ' + res.statusCode + ' (statusCode)');
+		}
+	});
+	req.on('error', function (error) 
+	{
+		adapter.log.error('Error requestCommandKey: ' + error);
+	});
 	req.setHeader('Content-Type', 'text/xml; charset=utf-8');
 	req.end(message_request);
 }
@@ -122,13 +154,22 @@ adapter.on('stateChange', function (id, state)
 		{
 			case 'turnOff':
 				adapter.log.debug('TEST TEST TEST');
-				
-				if (RequestPairing(adapter.config.pairingkey))
-					adapter.log.debug('Pairing mit TV ist OK!')
-				else
-					adapter.log.error('Pairing mit TV ist NICHT OK!');
+				RequestPairing(adapter.config.pairingkey, function (data) 
+				{
+					if(data)
+					{
+						// if pairing was successful, continue
+						adapter.log.debug('TEST DATA RESPONSE AFTER PAIRING: ' + data);
+						adapter.log.debug('TEST COMMAND KEY KEY_IDX_POWER_OFF: ' + data);
+						requestCommandKey(data, 'KEY_IDX_POWER_OFF');
+						adapter.log.debug('TEST COMMAND KEY 1: ' + data);
+						requestCommandKey(data, 1);
+					}
+					adapter.log.debug('NO TEST DATA RESPONSE AFTER PAIRING!');
+				});
 			break;
 			
+			/*
 			case 'volumeUp':
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 				getSessionId (adapter.config.ip, adapter.config.pairingkey, function (dev, sessionKey) 
@@ -231,6 +272,7 @@ adapter.on('stateChange', function (id, state)
 					}
 				});				
 			break;			
+			*/
 		}
 	}
 });
