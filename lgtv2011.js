@@ -156,6 +156,7 @@ adapter.on('stateChange', function (id, state)
 						RequestCommand(data, 25);
 						adapter.setState('volumeDown', !!state.val, true);
 					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+				});
 			break;
 			
 			case 'mute':
@@ -168,6 +169,7 @@ adapter.on('stateChange', function (id, state)
 						RequestCommand(data, 26);
 						adapter.setState('channelUp', !!state.val, true);
 					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+				});
 			break;
 			
 			case 'channelUp':
@@ -180,6 +182,7 @@ adapter.on('stateChange', function (id, state)
 						RequestCommand(data, 27);
 						adapter.setState('channelUp', !!state.val, true);
 					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+				});
 			break;			
 
 			case 'channelDown':
@@ -192,8 +195,8 @@ adapter.on('stateChange', function (id, state)
 						RequestCommand(data, 28);
 						adapter.setState('channelDown', !!state.val, true);
 					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+				});
 			break;			
-			*/
 		}
 	}
 });
