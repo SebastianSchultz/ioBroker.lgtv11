@@ -34,18 +34,6 @@
     ],
     "instanceObjects": [
       {
-        "_id":  "on",
-        "type": "state",
-        "common": {
-          "name": "Is TV is ON",
-          "role": "indicator.online",
-          "type": "string",
-          "read": true,
-          "write": false
-        },
-        "native": {}
-      },
-      {
         "_id":  "turnOff",
         "type": "state",
         "common": {
@@ -69,18 +57,6 @@
         },
         "native": {}
       },
-      {
-        "_id":    "volume",
-        "type":   "state",
-        "common": {
-          "name":   "Current volume",
-          "role":   "state",
-          "type":   "string",
-          "read":   true,
-          "write":  true
-        },
-        "native": {}
-      },	  
       {
         "_id":  "volumeUp",
         "type": "state",
@@ -130,18 +106,6 @@
         "native": {}
       },
       {
-        "_id":  "channelUp",
-        "type": "state",
-        "common": {
-          "name": "Channel UP",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
         "_id":  "channelDown",
         "type": "state",
         "common": {
@@ -157,18 +121,10 @@
         "_id":  "input",
         "type": "state",
         "common": {
-          "name": "Select input source",
-          "role": "state",
-          "type": "string",
-          "states": {
-            "AV_1": "AV_1",
-            "SCART_1": "Scart",
-            "COMP_1": "Component",
-            "HDMI_1": "HDMI 1",
-            "HDMI_2": "HDMI 2",
-            "HDMI_3": "HDMI 3"
-          },
-          "read": false,
+          "name": "Switch input source",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
           "write": true
         },
         "native": {}
