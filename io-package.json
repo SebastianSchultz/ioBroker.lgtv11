@@ -62,7 +62,7 @@
         "type": "state",
         "common": {
           "name": "Mute ON/OFF",
-          "role": "switch",
+          "role": "button",
           "type": "boolean",
           "read": false,
           "write": true
