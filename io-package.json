@@ -13,7 +13,7 @@
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "lgtv2011.png",
-        "enabled":                  true,
+        "enabled":                  false,
 	    "extIcon":                  "https://raw.githubusercontent.com/SMundt/ioBroker.lgtv2011/master/admin/lgtv2011.png",
 	    "keywords":                 ["lgtv", "2011", "Smart", "TV", "LG"],
         "readme":                   "https://github.com/SMundt/iobroker.lgtv2011/blob/master/README.md",
