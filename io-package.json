@@ -34,6 +34,18 @@
     ],
     "instanceObjects": [
       {
+        "_id":  "3Dmode",
+        "type": "state",
+        "common": {
+          "name": "Toggle 3D mode",
+          "role": "button",
+          "type": "boolean",
+          "read": false,
+		  "write": true
+        },
+        "native": {}
+      },	
+      {
         "_id":  "turnOff",
         "type": "state",
         "common": {
@@ -82,26 +94,14 @@
         "native": {}
       },
       {
-        "_id":  "3Dmode",
+        "_id":  "channelUp",
         "type": "state",
         "common": {
-          "name": "3D mode ON/OFF",
-          "role": "switch",
+          "name": "Channel UP",
+          "role": "button",
           "type": "boolean",
           "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":    "channel",
-        "type":   "state",
-        "common": {
-          "name":   "Select channel",
-          "role":   "state",
-          "type":   "string",
-          "read":   true,
-          "write":  true
+		  "write": true
         },
         "native": {}
       },
