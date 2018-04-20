@@ -1,7 +1,7 @@
 {
     "common": {
-        "name":                     "lgtv2011",
-        "version":                  "1.0.0",
+        "name":                     "lgtv11",
+        "version":                  "1.0.2",
         "title":                    "LG 2011 SmartTV Adapter",
         "desc":                     
 		{

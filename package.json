@@ -2,73 +2,85 @@
   "_args": [
     [
       {
-        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
     ],
     [
       {
-        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
     ],
     [
       {
-        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
     ],
     [
       {
-        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
     ],
     [
       {
-        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "scope": null,
         "escapedName": null,
         "name": null,
-        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "type": "remote"
+      },
+      "C:\\ioBroker\\node_modules\\iobroker"
+    ],
+    [
+      {
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
     ]
   ],
-  "_from": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-  "_id": "iobroker.lgtv2011@1.0.0",
+  "_from": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+  "_id": "iobroker.lgtv11@1.0.0",
   "_inCache": true,
-  "_location": "/iobroker.lgtv2011",
+  "_location": "/iobroker.lgtv11",
   "_nodeVersion": "4.5.0",
   "_npmOperationalInternal": {
     "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/iobroker.lgtv2011-1.0.0.tgz_1473878627042_0.5250728745013475"
+    "tmp": "tmp/iobroker.lgtv11-1.0.0.tgz_1473878627042_0.5250728745013475"
   },
   "_npmUser": {
     "name": "sebastianschultz",
@@ -77,28 +89,28 @@
   "_npmVersion": "2.15.9",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+    "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
     "scope": null,
     "escapedName": null,
     "name": null,
-    "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
-    "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+    "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+    "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
     "type": "remote"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+  "_resolved": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
   "_shasum": "52d9bfcc96e56fbd4b7023c5722ec4b5f0c40871",
   "_shrinkwrap": null,
-  "_spec": "https://github.com/SebastianSchultz/ioBroker.lgtv2011/tarball/master",
+  "_spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
   "_where": "C:\\ioBroker\\node_modules\\iobroker",
   "author": {
     "name": "Sebastian Schultz",
     "email": "mail@sebastian-schultz.de"
   },
   "bugs": {
-    "url": "https://github.com/SebastianSchultz/iobroker.lgtv2011/issues"
+    "url": "https://github.com/SebastianSchultz/iobroker.lgtv11/issues"
   },
   "contributors": [
     {
@@ -109,7 +121,7 @@
   "dependencies": {
     "websocket": "^1.0.23"
   },
-  "description": "ioBroker LG 2011 SmartTV Adapter",
+  "description": "ioBroker LG 11 SmartTV Adapter",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
@@ -124,9 +136,9 @@
   "directories": {},
   "dist": {
     "shasum": "52d9bfcc96e56fbd4b7023c5722ec4b5f0c40871",
-    "tarball": "https://registry.npmjs.org/iobroker.lgtv2011/-/iobroker.lgtv11-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/iobroker.lgtv11/-/iobroker.lgtv11-1.0.0.tgz"
   },
-  "homepage": "https://github.com/SebastianSchultz/iobroker.lgtv2011",
+  "homepage": "https://github.com/SebastianSchultz/iobroker.lgtv11",
   "keywords": [
     "ioBroker",
     "lgtv",
@@ -142,12 +154,12 @@
   ],
   "name": "iobroker.lgtv11",
   "optionalDependencies": {},
-  "readme": "# ioBroker.lgtv2011\nLG SmartTV 2011 adapter for ioBroker \n",
+  "readme": "# ioBroker.lgtv11\nLG SmartTV 11 adapter for ioBroker \n",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SebastianSchultz/iobroker.lgtv2011.git"
+    "url": "git+https://github.com/SebastianSchultz/iobroker.lgtv11.git"
   },
   "scripts": {},
-  "version": "1.0.0"
+  "version": "1.0.2"
 }

@@ -1,5 +1,5 @@
 ![Logo](admin/lgtv2011.png)
-# ioBroker.lgtv2011
+# ioBroker.lgtv11
 =================
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.lgtv11.svg)](https://www.npmjs.com/package/iobroker.lgtv11)
@@ -7,8 +7,8 @@
 
 [![NPM](https://nodei.co/npm/iobroker.lgtv11.png?downloads=true)](https://nodei.co/npm/iobroker.lgtv11/)
 
-**Tests:** Linux/Mac: [![Travis-CI](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv2011.svg?branch=master)](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv2011)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/gdonyteveigan578/branch/master?svg=true)](https://ci.appveyor.com/project/SebastianSchultz/iobroker-lgtv2011/branch/master)
+**Tests:** Linux/Mac: [![Travis-CI](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv11.svg?branch=master)](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv11)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/gdonyteveigan578/branch/master?svg=true)](https://ci.appveyor.com/project/SebastianSchultz/iobroker-lgtv11/branch/master)
 
 
 
@@ -102,6 +102,12 @@ Open the input list to switch to.
 
 
 ## Changelog
+
+### 1.0.2 (2018-04-18)
+* (SebastianSchultz) Renamed from ioBroker.lgtv2011 to ioBroker.lgtv11
+
+### 1.0.1 (2018-04-17)
+* (SebastianSchultz) Code clean up
 
 ### 1.0.0 (2018-04-15)
 * (SebastianSchultz) Initial Release
