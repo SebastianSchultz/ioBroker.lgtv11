@@ -8,7 +8,9 @@
 [![NPM](https://nodei.co/npm/iobroker.lgtv11.png?downloads=true)](https://nodei.co/npm/iobroker.lgtv11/)
 
 **Tests:** Linux/Mac: [![Travis-CI](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv11.svg?branch=master)](https://travis-ci.org/SebastianSchultz/ioBroker.lgtv11)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/gdonyteveigan578/branch/master?svg=true)](https://ci.appveyor.com/project/SebastianSchultz/iobroker-lgtv11/branch/master)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/fwlpfd33mafbivcm/branch/master?svg=true)](https://ci.appveyor.com/project/SebastianSchultz/iobroker-lgtv11/branch/master)
+
+
 
 
 
