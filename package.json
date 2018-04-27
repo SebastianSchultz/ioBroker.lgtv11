@@ -83,6 +83,18 @@
         "type": "remote"
       },
       "C:\\ioBroker\\node_modules\\iobroker"
+    ],
+    [
+      {
+        "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+        "type": "remote"
+      },
+      "C:\\ioBroker\\node_modules\\iobroker"
     ]
   ],
   "_from": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
@@ -158,6 +170,7 @@
     "home automation"
   ],
   "license": "MIT",
+  "main": "main.js",
   "maintainers": [
     {
       "name": "Sebastian Schultz",
@@ -172,7 +185,6 @@
     "type": "git",
     "url": "git+https://github.com/SebastianSchultz/iobroker.lgtv11.git"
   },
-  "main": "main.js",
   "scripts": {},
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

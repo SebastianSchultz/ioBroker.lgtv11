@@ -68,7 +68,7 @@
 			if (!active) 
 				showMessage(_(translateWord('Please enable the adapter')), 'Warning', 'info');
 			else
-				sendTo('lgtv2011.' + instance, 'RequestPairingKey_Msg', 5000, function (result)	{});
+				sendTo('lgtv11.' + instance, 'RequestPairingKey_Msg', 5000, function (result)	{});
 		});
 
         for (var key in settings) {
