@@ -105,6 +105,9 @@ Open the input list to switch to.
 
 ## Changelog
 
+### 1.0.3 (2018-04-27)
+* (SebastianSchultz) Fixed a bug in Admin interface that no pairing key could be requested
+
 ### 1.0.2 (2018-04-18)
 * (SebastianSchultz) Renamed from ioBroker.lgtv2011 to ioBroker.lgtv11
 
