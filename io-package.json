@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "lgtv11",
-        "version":                  "1.0.3",
+        "version":                  "1.0.4",
         "title":                    "LG 2011 SmartTV Adapter",
         "desc":                     
 		{
@@ -44,7 +44,19 @@
 		  "write": true
         },
         "native": {}
-      },	
+      },
+      {
+        "_id":  "back",
+        "type": "state",
+        "common": {
+          "name": "Toggle back",
+          "role": "button",
+          "type": "boolean",
+          "read": false,
+		  "write": true
+        },
+        "native": {}
+      },  
       {
         "_id":  "turnOff",
         "type": "state",

@@ -54,6 +54,11 @@ You can use HTML linebreaks (br) in the text.
 Switching off the TV.
 
 
+```setState('lgtv.0.back', true);```
+
+Goes back.
+
+
 ```setState('lgtv.0.mute', true);```
 
 Mute the TV.
@@ -104,6 +109,9 @@ Open the input list to switch to.
 
 
 ## Changelog
+
+### 1.0.4 (2018-05-08)
+* (SebastianSchultz) Added "back" command/state
 
 ### 1.0.3 (2018-04-27)
 * (SebastianSchultz) Fixed a bug in Admin interface that no pairing key could be requested

@@ -145,6 +145,18 @@ adapter.on('stateChange', function (id, state)
 				});
 			break;
 			
+			case 'back':
+				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
+				RequestSessionKey(adapter.config.pairingkey, function (data) 
+				{
+					if(data)
+					{
+						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
+						RequestCommand(data, 23);
+					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+				});
+			break;
+			
 			case 'volumeUp':
 				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
 				RequestSessionKey(adapter.config.pairingkey, function (data) 
