@@ -9,6 +9,36 @@ var net = require('net');
 
 var pollTimerChannel = null;
 
+var commands = {
+	"3Dmode": 400,
+	"turnOff": 1,
+	"back": 23,
+	"volumeUp": 24,
+	"volumeDown": 25,
+	"mute": 26,
+	"channelUp": 27,
+	"channelDown": 28,
+	"input": 47,
+	"number0": 2,
+	"number1": 3,
+	"number2": 4,
+	"number3": 5,
+	"number4": 6,
+	"number5": 7,
+	"number6": 8,
+	"number7": 9,
+	"number8": 10,
+	"number9": 11,
+	"ok": 20,
+	"up": 12,
+	"dowon": 13,
+	"left": 14,
+	"right": 15,
+	"play": 33,
+	"pause": 34,
+	"stop": 35
+}
+
 function RequestPairingKey(ip, port) 
 {
 	adapter.log.info('Requesting Pairing Key on TV: ' + adapter.config.ip + '...');
@@ -119,121 +149,17 @@ adapter.on('stateChange', function (id, state)
     if (id && state && !state.ack)
 	{
 		id = id.substring(adapter.namespace.length + 1);
-		switch (id)
-		{
-			case '3Dmode':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
+		if(typeof commands[id] != "undefined"){
+			adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
+			RequestSessionKey(adapter.config.pairingkey, function (data) 
+			{
+				if(data)
 				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 400);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;
-			
-			case 'turnOff':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 1);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;
-			
-			case 'back':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 23);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;			
-			
-			case 'volumeUp':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 24);
-						adapter.setState('volumeUp', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;
-			
-			case 'volumeDown':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 25);
-						adapter.setState('volumeDown', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;
-			
-			case 'mute':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 26);
-						adapter.setState('channelUp', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;
-			
-			case 'channelUp':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 27);
-						adapter.setState('channelUp', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;			
-
-			case 'channelDown':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 28);
-						adapter.setState('channelDown', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;			
-
-			case 'input':
-				adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-				RequestSessionKey(adapter.config.pairingkey, function (data) 
-				{
-					if(data)
-					{
-						adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-						RequestCommand(data, 47);
-						adapter.setState('channelDown', !!state.val, true);
-					} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-				});
-			break;	
+					adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
+					RequestCommand(data, commands[id]);
+					adapter.setState(id, !!state.val, true);
+				} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+			});
 		}
 	}
 });
