@@ -31,7 +31,7 @@ var commands = {
 	"number9": 11,
 	"ok": 20,
 	"up": 12,
-	"dowon": 13,
+	"down": 13,
 	"left": 14,
 	"right": 15,
 	"play": 33,
