@@ -140,6 +140,222 @@
           "write": true
         },
         "native": {}
+      },
+      {
+        "_id":  "number0",
+        "type": "state",
+        "common": {
+          "name": "Number 0",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number1",
+        "type": "state",
+        "common": {
+          "name": "Number 1",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number2",
+        "type": "state",
+        "common": {
+          "name": "Number 2",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number3",
+        "type": "state",
+        "common": {
+          "name": "Number 3",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number4",
+        "type": "state",
+        "common": {
+          "name": "Number 4",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number5",
+        "type": "state",
+        "common": {
+          "name": "Number 5",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number6",
+        "type": "state",
+        "common": {
+          "name": "Number 6",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number7",
+        "type": "state",
+        "common": {
+          "name": "Number 7",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number8",
+        "type": "state",
+        "common": {
+          "name": "Number 8",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "number9",
+        "type": "state",
+        "common": {
+          "name": "Number 9",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "ok",
+        "type": "state",
+        "common": {
+          "name": "OK",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "up",
+        "type": "state",
+        "common": {
+          "name": "Up",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "down",
+        "type": "state",
+        "common": {
+          "name": "Down",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "left",
+        "type": "state",
+        "common": {
+          "name": "Left",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "right",
+        "type": "state",
+        "common": {
+          "name": "Right",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "play",
+        "type": "state",
+        "common": {
+          "name": "Play",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "pause",
+        "type": "state",
+        "common": {
+          "name": "Pause",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
+      },
+      {
+        "_id":  "stop",
+        "type": "state",
+        "common": {
+          "name": "Stop",
+          "role": "button",
+          "type": "boolean",
+          "read": true,
+          "write": true
+        },
+        "native": {}
       }
 	]
 }
