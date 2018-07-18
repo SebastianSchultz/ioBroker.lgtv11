@@ -21,7 +21,7 @@
         "messagebox":               true,
         "materialize": true,
         "subscribe":                "messagebox",		
-        "type":                     "media"
+        "type":                     "multimedia"
     },
     "native": {
         "ip":       "",
