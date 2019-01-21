@@ -1,7 +1,7 @@
 {
     "common": {
         "name":                     "lgtv11",
-        "version":                  "1.0.4",
+        "version":                  "1.0.5",
         "title":                    "LG 2011 SmartTV Adapter",
         "desc":                     
 		{
@@ -21,7 +21,8 @@
         "messagebox":               true,
         "materialize": true,
         "subscribe":                "messagebox",		
-        "type":                     "multimedia"
+        "type":                     "multimedia",
+		"compact":					true
     },
     "native": {
         "ip":       "",

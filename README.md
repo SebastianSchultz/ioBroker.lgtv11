@@ -104,6 +104,9 @@ Open the input list to switch to.
 
 ## Changelog
 
+### 1.0.5 (2019-01-21)
+* (SebastianSchultz) Added compact mode
+
 ### 1.0.4 (2018-05-08)
 * (SebastianSchultz) Added "back" command/state
 
@@ -127,7 +130,7 @@ Open the input list to switch to.
 
 The MIT License (MIT)
 
-Copyright (c) 2018 Sebastian Schultz.
+Copyright (c) 2019 Sebastian Schultz.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

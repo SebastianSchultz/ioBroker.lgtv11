@@ -1,13 +1,27 @@
+/* jshint -W097 */
+/* jshint strict:false */
+/* global require */
+/* global RRule */
+/* global __dirname */
+/* jslint node: true */
 'use strict';
+
 var fs 				= require('fs'); // for storing client key
-var utils 			= require(__dirname + '/lib/utils');
-var adapter 		= utils.adapter('lgtv11');
+var utils = require('@iobroker/adapter-core');
+var adapter;
 
 var dgram = require('dgram');
 var http = require('http');
 var net = require('net');
 
 var pollTimerChannel = null;
+
+if (module && module.parent) {
+    module.exports = startAdapter;
+} else {
+    // or start the instance directly
+    startAdapter();
+} 
 
 var commands = {
 	"3Dmode": 400,
@@ -144,25 +158,41 @@ function RequestCommand(sessionID, commandKey)
 	req.end(message_request);
 }
 
-adapter.on('stateChange', function (id, state)
-{
-    if (id && state && !state.ack)
-	{
-		id = id.substring(adapter.namespace.length + 1);
-		if(typeof commands[id] != "undefined"){
-			adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
-			RequestSessionKey(adapter.config.pairingkey, function (data) 
+function startAdapter(options) {
+    options = options || {};
+    Object.assign(options,{
+        name:  "lgtv11",
+        stateChange:  function (id, state) {
+            if (id && state && !state.ack)
 			{
-				if(data)
+				id = id.substring(adapter.namespace.length + 1);
+				if(typeof commands[id] != "undefined")
 				{
-					adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
-					RequestCommand(data, commands[id]);
-					adapter.setState(id, !!state.val, true);
-				} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
-			});
-		}
-	}
-});
+					adapter.log.debug('Starting state change "' + id + '", value "' + state.val + '" to LG TV at ' + adapter.config.ip + ' on port ' + adapter.config.port);
+					RequestSessionKey(adapter.config.pairingkey, function (data) 
+					{
+						if(data)
+						{
+							adapter.log.debug('RequestCommand, Data response after RequestSessionKey: ' + data);
+							RequestCommand(data, commands[id]);
+							adapter.setState(id, !!state.val, true);
+						} else adapter.log.debug('RequestCommand, No Data response after RequestSessionKey!');
+					});
+				}
+			}
+        },
+        unload: function (callback) {
+            callback();
+        },
+        ready: function () {
+            main();
+        }
+    });
+
+    adapter = new utils.Adapter(options);
+
+    return adapter;
+}
 
 adapter.on('message', function (obj) 
 {
@@ -179,8 +209,6 @@ adapter.on('message', function (obj)
 		break;
     }
 });
-
-adapter.on('ready', main);
 
 function main() 
 {

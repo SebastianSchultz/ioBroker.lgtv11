@@ -98,13 +98,15 @@
     ]
   ],
   "_from": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
-  "_id": "iobroker.lgtv11@1.0.2",
+  "_id": "iobroker.lgtv11@1.0.5",
+  "_inBundle": false,
   "_inCache": true,
+  "_integrity": "sha512-DBiP3HkJgI0UwXQr0l5mjBH4C4rEYTxnik582tixF3l3N1bhT7J9BXAS2cWVxG3AJwY1+ureQtItcmfbpZkLmw==",
   "_location": "/iobroker.lgtv11",
   "_nodeVersion": "4.5.0",
   "_npmOperationalInternal": {
     "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/iobroker.lgtv11-1.0.0.tgz_1473878627042_0.5250728745013475"
+    "tmp": "tmp/iobroker.lgtv11-1.0.5.tgz_1473878627042_0.5250728745013475"
   },
   "_npmUser": {
     "name": "sebastianschultz",
@@ -113,19 +115,17 @@
   "_npmVersion": "2.15.9",
   "_phantomChildren": {},
   "_requested": {
+    "type": "remote",
     "raw": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
     "rawSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
-    "spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
-    "type": "remote"
+    "saveSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
+    "fetchSpec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master"
   },
   "_requiredBy": [
     "#USER"
   ],
   "_resolved": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
-  "_shasum": "52d9bfcc96e56fbd4b7023c5722ec4b5f0c40871",
+  "_shasum": "97712db0fe48ee83117abf1a679c8e15ec4f6a1f",
   "_shrinkwrap": null,
   "_spec": "https://github.com/SebastianSchultz/ioBroker.lgtv11/tarball/master",
   "_where": "C:\\ioBroker\\node_modules\\iobroker",
@@ -136,6 +136,7 @@
   "bugs": {
     "url": "https://github.com/SebastianSchultz/iobroker.lgtv11/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Sebastian Schultz",
@@ -143,8 +144,10 @@
     }
   ],
   "dependencies": {
-    "websocket": "^1.0.23"
+    "websocket": "^1.0.23",
+    "@iobroker/adapter-core": "^1.0.2"	
   },
+  "deprecated": false,
   "description": "ioBroker LG 11 SmartTV Adapter",
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -160,7 +163,7 @@
   "directories": {},
   "dist": {
     "shasum": "52d9bfcc96e56fbd4b7023c5722ec4b5f0c40871",
-    "tarball": "https://registry.npmjs.org/iobroker.lgtv11/-/iobroker.lgtv11-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/iobroker.lgtv11/-/iobroker.lgtv11-1.0.5.tgz"
   },
   "homepage": "https://github.com/SebastianSchultz/iobroker.lgtv11",
   "keywords": [
@@ -179,12 +182,10 @@
   ],
   "name": "iobroker.lgtv11",
   "optionalDependencies": {},
-  "readme": "# ioBroker.lgtv11\nLG SmartTV 11 adapter for ioBroker \n",
-  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SebastianSchultz/iobroker.lgtv11.git"
   },
   "scripts": {},
-  "version": "1.0.3"
+  "version": "1.0.5"
 }
