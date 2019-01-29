@@ -2,13 +2,16 @@
     "common": {
         "name":                     "lgtv11",
         "version":                  "1.0.5",
-        "title":                    "LG 2011 SmartTV Adapter",
+        "title":                    "LG 2011 SmartTV",
         "desc":                     
 		{
  			             "en": "Controls 2011 LG SmartTVs",
  			             "de": "Steuert LG SmartTV Modelle vor 2012",
  			             "ru": "Controls 2011  SmartTVs"
 	    },
+		"authors": [
+            "SebastianSchultz <mail@sebastian-schultz.de>"
+		],			
 	    "license":                "MIT",
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
