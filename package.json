@@ -8,10 +8,7 @@
   },
   "bundleDependencies": false,
   "contributors": [
-    {
-      "name": "Bluefox",
-      "email": "dogafox@gmail.com"
-    }
+
   ],
   "dependencies": {
     "websocket": "^1.0.23",
