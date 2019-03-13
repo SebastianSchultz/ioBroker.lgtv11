@@ -2,7 +2,7 @@
 # ioBroker.lgtv11
 =================
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.lgtv11.svg)](https://www.npmjs.com/package/iobroker.lgtv11)
+![Number of Installations](http://iobroker.live/badges/lgtv11-installed.svg) ![Number of Installations](http://iobroker.live/badges/lgtv11-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.lgtv11.svg)](https://www.npmjs.com/package/iobroker.lgtv11)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.lgtv11.svg)](https://www.npmjs.com/package/iobroker.lgtv11)
 
 [![NPM](https://nodei.co/npm/iobroker.lgtv11.png?downloads=true)](https://nodei.co/npm/iobroker.lgtv11/)

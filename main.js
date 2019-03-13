@@ -191,24 +191,24 @@ function startAdapter(options) {
 
     adapter = new utils.Adapter(options);
 
+    adapter.on('message', function (obj)
+    {
+            adapter.log.debug('Incoming Adapter message: ' + obj.command);
+        switch (obj.command)
+            {
+            case 'RequestPairingKey_Msg':
+                if (!obj.callback) return false;
+                            RequestPairingKey(adapter.config.ip, adapter.config.port);
+                    return true;
+
+            default:
+                adapter.log.warn("Unknown command: " + obj.command);
+                    break;
+        }
+    });
+
     return adapter;
 }
-
-adapter.on('message', function (obj) 
-{
-	adapter.log.debug('Incoming Adapter message: ' + obj.command);
-    switch (obj.command) 
-	{
-        case 'RequestPairingKey_Msg':
-            if (!obj.callback) return false;
-			RequestPairingKey(adapter.config.ip, adapter.config.port);
-		return true;
-		
-        default:
-            adapter.log.warn("Unknown command: " + obj.command);
-		break;
-    }
-});
 
 function main() 
 {
