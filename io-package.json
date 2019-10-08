@@ -2,6 +2,16 @@
     "common": {
         "name":                     "lgtv11",
         "version":                  "1.0.5",
+ "news": {
+            "1.0.1": {
+                "en": "Added Compact mode",
+                "de": "Compact Mode hinzugefügt",
+                "ru": "Added Compact mode",
+                "pt": "Added Compact mode",
+                "fr": "Added Compact mode",
+                "nl": "Added Compact mode"
+            }
+ },
         "title":                    "LG 2011 SmartTV",
         "desc":                     
 		{
