@@ -22,7 +22,10 @@
 		"authors": [
             "SebastianSchultz <mail@sebastian-schultz.de>"
 		],			
-	    "license":                "MIT",
+	    "licenseInformation": {
+	     "type": "free",
+	     "license": "MIT"
+	    },
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "lgtv2011.png",
