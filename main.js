@@ -6,13 +6,13 @@
 /* jslint node: true */
 'use strict';
 
-var fs 				= require('fs'); // for storing client key
+var fs 				= require('node:fs'); // for storing client key
 var utils = require('@iobroker/adapter-core');
 var adapter;
 
-var dgram = require('dgram');
-var http = require('http');
-var net = require('net');
+var dgram = require('node:dgram');
+var http = require('node:http');
+var net = require('node:net');
 
 var pollTimerChannel = null;
 
