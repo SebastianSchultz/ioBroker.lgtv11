@@ -125,6 +125,7 @@ Open the input list to switch to.
 
 ---
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
 
 ## License
 
