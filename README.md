@@ -104,6 +104,10 @@ Open the input list to switch to.
 
 ## Changelog
 
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+
 ### 1.0.5 (2019-01-21)
 * (SebastianSchultz) Added compact mode
 
