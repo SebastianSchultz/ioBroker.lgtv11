@@ -1,375 +1,385 @@
 {
-    "common": {
-        "name":                     "lgtv11",
-        "version":                  "1.0.5",
- "news": {
-            "1.0.1": {
-                "en": "Added Compact mode",
-                "de": "Compact Mode hinzugefügt",
-                "ru": "Added Compact mode",
-                "pt": "Added Compact mode",
-                "fr": "Added Compact mode",
-                "nl": "Added Compact mode"
-            }
- },
-        "title":                    "LG 2011 SmartTV",
-        "desc":                     
-		{
- 			             "en": "Controls 2011 LG SmartTVs",
- 			             "de": "Steuert LG SmartTV Modelle vor 2012",
- 			             "ru": "Controls 2011  SmartTVs"
-	    },
-		"authors": [
-            "SebastianSchultz <mail@sebastian-schultz.de>"
-		],			
-	    "license":                "MIT",
-        "platform":                 "Javascript/Node.js",
-        "mode":                     "daemon",
-        "icon":                     "lgtv2011.png",
-        "enabled":                  false,
-	    "extIcon":                  "https://raw.githubusercontent.com/SMundt/ioBroker.lgtv2011/master/admin/lgtv2011.png",
-	    "keywords":                 ["lgtv", "2011", "Smart", "TV", "LG"],
-        "readme":                   "https://github.com/SMundt/iobroker.lgtv2011/blob/master/README.md",
-	    "loglevel":                 "info",
-        "messagebox":               true,
-        "materialize": true,
-        "subscribe":                "messagebox",		
-        "type":                     "multimedia",
-		"compact":					true
-    },
-    "native": {
-        "ip":       "",
-		"port":		"8080",
-		"pairingkey":  "",
-        "interval": "60000"
-    },
-    "objects": [
-
-    ],
-    "instanceObjects": [
-      {
-        "_id":  "3Dmode",
-        "type": "state",
-        "common": {
-          "name": "Toggle 3D mode",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-		  "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "back",
-        "type": "state",
-        "common": {
-          "name": "Toggle back",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-		  "write": true
-        },
-        "native": {}
-      },  
-      {
-        "_id":  "turnOff",
-        "type": "state",
-        "common": {
-          "name": "Switch TV OFF",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "mute",
-        "type": "state",
-        "common": {
-          "name": "Mute ON/OFF",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "volumeUp",
-        "type": "state",
-        "common": {
-          "name": "Volume UP",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "volumeDown",
-        "type": "state",
-        "common": {
-          "name": "Volume DOWN",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "channelUp",
-        "type": "state",
-        "common": {
-          "name": "Channel UP",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-		  "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "channelDown",
-        "type": "state",
-        "common": {
-          "name": "Channel DOWN",
-          "role": "button",
-          "type": "boolean",
-          "read": false,
-		  "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "input",
-        "type": "state",
-        "common": {
-          "name": "Switch input source",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number0",
-        "type": "state",
-        "common": {
-          "name": "Number 0",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number1",
-        "type": "state",
-        "common": {
-          "name": "Number 1",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number2",
-        "type": "state",
-        "common": {
-          "name": "Number 2",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number3",
-        "type": "state",
-        "common": {
-          "name": "Number 3",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number4",
-        "type": "state",
-        "common": {
-          "name": "Number 4",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number5",
-        "type": "state",
-        "common": {
-          "name": "Number 5",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number6",
-        "type": "state",
-        "common": {
-          "name": "Number 6",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number7",
-        "type": "state",
-        "common": {
-          "name": "Number 7",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number8",
-        "type": "state",
-        "common": {
-          "name": "Number 8",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "number9",
-        "type": "state",
-        "common": {
-          "name": "Number 9",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "ok",
-        "type": "state",
-        "common": {
-          "name": "OK",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "up",
-        "type": "state",
-        "common": {
-          "name": "Up",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "down",
-        "type": "state",
-        "common": {
-          "name": "Down",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "left",
-        "type": "state",
-        "common": {
-          "name": "Left",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "right",
-        "type": "state",
-        "common": {
-          "name": "Right",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "play",
-        "type": "state",
-        "common": {
-          "name": "Play",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "pause",
-        "type": "state",
-        "common": {
-          "name": "Pause",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
-      },
-      {
-        "_id":  "stop",
-        "type": "state",
-        "common": {
-          "name": "Stop",
-          "role": "button",
-          "type": "boolean",
-          "read": true,
-          "write": true
-        },
-        "native": {}
+  "common": {
+    "name": "lgtv11",
+    "version": "1.0.5",
+    "news": {
+      "1.0.1": {
+        "en": "Added Compact mode",
+        "de": "Compact Mode hinzugefügt",
+        "ru": "Added Compact mode",
+        "pt": "Added Compact mode",
+        "fr": "Added Compact mode",
+        "nl": "Added Compact mode"
       }
-	]
+    },
+    "title": "LG 2011 SmartTV",
+    "desc": {
+      "en": "Controls 2011 LG SmartTVs",
+      "de": "Steuert LG SmartTV Modelle vor 2012",
+      "ru": "Controls 2011  SmartTVs"
+    },
+    "authors": [
+      "SebastianSchultz <mail@sebastian-schultz.de>"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "lgtv2011.png",
+    "enabled": false,
+    "extIcon": "https://raw.githubusercontent.com/SMundt/ioBroker.lgtv2011/master/admin/lgtv2011.png",
+    "keywords": [
+      "lgtv",
+      "2011",
+      "Smart",
+      "TV",
+      "LG"
+    ],
+    "readme": "https://github.com/SMundt/iobroker.lgtv2011/blob/master/README.md",
+    "loglevel": "info",
+    "messagebox": true,
+    "subscribe": "messagebox",
+    "type": "multimedia",
+    "compact": true,
+    "adminUI": {
+      "config": "materialize"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ]
+  },
+  "native": {
+    "ip": "",
+    "port": "8080",
+    "pairingkey": "",
+    "interval": "60000"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "3Dmode",
+      "type": "state",
+      "common": {
+        "name": "Toggle 3D mode",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "back",
+      "type": "state",
+      "common": {
+        "name": "Toggle back",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "turnOff",
+      "type": "state",
+      "common": {
+        "name": "Switch TV OFF",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "mute",
+      "type": "state",
+      "common": {
+        "name": "Mute ON/OFF",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "volumeUp",
+      "type": "state",
+      "common": {
+        "name": "Volume UP",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "volumeDown",
+      "type": "state",
+      "common": {
+        "name": "Volume DOWN",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channelUp",
+      "type": "state",
+      "common": {
+        "name": "Channel UP",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "channelDown",
+      "type": "state",
+      "common": {
+        "name": "Channel DOWN",
+        "role": "button",
+        "type": "boolean",
+        "read": false,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "input",
+      "type": "state",
+      "common": {
+        "name": "Switch input source",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number0",
+      "type": "state",
+      "common": {
+        "name": "Number 0",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number1",
+      "type": "state",
+      "common": {
+        "name": "Number 1",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number2",
+      "type": "state",
+      "common": {
+        "name": "Number 2",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number3",
+      "type": "state",
+      "common": {
+        "name": "Number 3",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number4",
+      "type": "state",
+      "common": {
+        "name": "Number 4",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number5",
+      "type": "state",
+      "common": {
+        "name": "Number 5",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number6",
+      "type": "state",
+      "common": {
+        "name": "Number 6",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number7",
+      "type": "state",
+      "common": {
+        "name": "Number 7",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number8",
+      "type": "state",
+      "common": {
+        "name": "Number 8",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "number9",
+      "type": "state",
+      "common": {
+        "name": "Number 9",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "ok",
+      "type": "state",
+      "common": {
+        "name": "OK",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "up",
+      "type": "state",
+      "common": {
+        "name": "Up",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "down",
+      "type": "state",
+      "common": {
+        "name": "Down",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "left",
+      "type": "state",
+      "common": {
+        "name": "Left",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "right",
+      "type": "state",
+      "common": {
+        "name": "Right",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "play",
+      "type": "state",
+      "common": {
+        "name": "Play",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "pause",
+      "type": "state",
+      "common": {
+        "name": "Pause",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "stop",
+      "type": "state",
+      "common": {
+        "name": "Stop",
+        "role": "button",
+        "type": "boolean",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    }
+  ]
 }
